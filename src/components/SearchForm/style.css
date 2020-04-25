@@ -1,6 +1,6 @@
 form {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
 }
 form.search {
     overflow: auto;

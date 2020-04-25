@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import SearchBar from "../../components/SearchForm";
 import Navbar from "../../components/Navbar";
 // import { parseEmployee } from '../../utils/EmployeeParser';
-import TableContext from "../../utils/TableContext";
+import EmployeeContext from "../../utils/EmployeeContext";
 
-const Employees = () => {
+const EmployeeSearch = () => {
     const [tableState, setTableState] = useState({
         userList: [],
         filterValue: ""
@@ -14,7 +14,8 @@ const Employees = () => {
     const [error, setError] = useState("");
 
     useEffect(() => {
-        document.title = 'Dashboard = Employees'
+        document.title = 'Dashboard - Employees';
+        if (!filter) { return; }
         setTableState({
             userList: ['ass'],
             filterValue: "test"
@@ -31,10 +32,12 @@ const Employees = () => {
     
 
     return (
-        <TableContext.Provider value={tableState}>
+        <EmployeeContext.Provider value={tableState}>
             <div>
             <h1>{tableState}</h1>
             </div>
-        </TableContext.Provider>
+        </EmployeeContext.Provider>
     )
 }
+
+export default EmployeeSearch;
