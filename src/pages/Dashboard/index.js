@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SearchBar from "../../components/SearchBar";
+import SearchBar from "../../components/SearchForm";
 import Navbar from "../../components/Navbar";
 // import { parseEmployee } from '../../utils/EmployeeParser';
 import TableContext from "../../utils/TableContext";
@@ -16,7 +16,8 @@ const Employees = () => {
     useEffect(() => {
         document.title = 'Dashboard = Employees'
         setTableState({
-            userList: ['ass']
+            userList: ['ass'],
+            filterValue: "test"
         })
     })
 
